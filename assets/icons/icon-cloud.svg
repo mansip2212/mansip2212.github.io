@@ -1,0 +1,51 @@
+<svg width="60" height="48" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Using the same gradient colors -->
+    <linearGradient id="grad" x1="3.15333" y1="1" x2="26.6886" y2="35.0542" gradientUnits="userSpaceOnUse">
+      <stop offset="0.259336" stop-color="#0D86FF"/>
+      <stop offset="1" stop-color="#0D86FF"/>
+    </linearGradient>
+  </defs>
+  <!-- Group to shift the entire design upward -->
+  <g transform="translate(0, -5)">
+    <!-- Outer Cloud Outline -->
+    <path id="outerCloud" d="M10 18
+             C10 15 13 13 16 13
+             C17 10 22 10 23 13
+             C27 13 30 15 30 18
+             C33 18 35 20 35 23
+             C35 26 33 28 30 28
+             H12
+             C9 28 7 26 7 23
+             C7 20 9 18 10 18 Z" 
+          stroke="url(#grad)" stroke-width="1.5" fill="none"/>
+    <!-- Inner Concentric Cloud Outline (scaled and centered) -->
+    <path id="innerCloud" d="M10 18
+             C10 15 13 13 16 13
+             C17 10 22 10 23 13
+             C27 13 30 15 30 18
+             C33 18 35 20 35 23
+             C35 26 33 28 30 28
+             H12
+             C9 28 7 26 7 23
+             C7 20 9 18 10 18 Z" 
+          stroke="url(#grad)" stroke-width="1.1" fill="none"
+          transform="translate(21,20.5) scale(0.65) translate(-21,-20.5)"/>
+
+    <!-- Lock Outline: Shackle -->
+    <g transform="translate(20,22) scale(0.6) translate(-20,-23)">
+    <path d="M18,18 v-2 a2,2 0 0,1 4,0 v2" 
+          stroke="url(#grad)" stroke-width="1" fill="none"/>
+    <!-- Lock Outline: Body -->
+    <rect x="16" y="18" width="8" height="8" rx="1.5" stroke="url(#grad)" stroke-width="1" fill="none"/>
+    <!-- Keyhole Outline (circle with a tail) -->
+    <path d="
+      M20 20 
+      a1 1 0 1 1 0 2 
+      a1 1 0 1 1 0 -2 
+      M20 22 
+      v2" 
+      stroke="url(#grad)" stroke-width="1" fill="none"/>
+      </g>
+  </g>
+</svg>
