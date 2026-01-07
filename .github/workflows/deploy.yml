@@ -31,10 +31,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
+      - name: Load environment variables
+        run: |
+          if [ -f .env.production ]; then
+            export $(cat .env.production | grep -v '^#' | xargs)
+            echo "Loaded .env.production"
+          else
+            echo "No .env.production found, using secrets"
+          fi
+      
       - name: Build
         run: npm run build
         env:
-          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || '' }}
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || 'https://my-portfolio-seven-teal-92.vercel.app' }}
       
       - name: Verify build output
         run: |
