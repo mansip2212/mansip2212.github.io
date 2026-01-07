@@ -76,8 +76,10 @@ A modern, interactive portfolio website showcasing my projects, experience, and 
    Create a `.env.local` file in the root directory:
    ```env
    # For production API (optional - set during build)
-   VITE_API_URL=https://your-api-url.vercel.app/api/chat
+   VITE_API_BASE_URL=https://your-api-url.vercel.app
    ```
+   
+   **Note**: The `/api/chat` endpoint is automatically appended, so only provide the base URL.
 
    For local development, the proxy in `vite.config.js` will handle API calls.
 

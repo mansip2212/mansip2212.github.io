@@ -47,10 +47,10 @@ vercel
 Create `.env.production` file in `my-portfolio/` folder:
 
 ```env
-VITE_API_URL=https://your-actual-vercel-url.vercel.app/api/chat
+VITE_API_BASE_URL=https://your-actual-vercel-url.vercel.app
 ```
 
-Replace `your-actual-vercel-url` with your real Vercel URL from Step 1.
+Replace `your-actual-vercel-url` with your real Vercel URL from Step 1. The `/api/chat` endpoint is automatically appended.
 
 ---
 

@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://your-api-url.vercel.app/api/chat' }}
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || 'https://your-api-url.vercel.app' }}
       
       - name: Create 404.html for GitHub Pages SPA routing
         run: |

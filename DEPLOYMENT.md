@@ -94,10 +94,10 @@ curl -X POST https://your-project-name.vercel.app/api/chat \
 Create a `.env.production` file in the root (`my-portfolio/`):
 
 ```env
-VITE_API_URL=https://your-project-name.vercel.app/api/chat
+VITE_API_BASE_URL=https://your-project-name.vercel.app
 ```
 
-Replace `your-project-name` with your actual Vercel project name.
+Replace `your-project-name` with your actual Vercel project name. The `/api/chat` endpoint is automatically appended.
 
 ### 2.2 Enable GitHub Pages
 
@@ -113,8 +113,9 @@ Replace `your-project-name` with your actual Vercel project name.
 1. In your GitHub repo, go to **Settings** → **Secrets and variables** → **Actions**
 2. Click **New repository secret**
 3. Add:
-   - **Name**: `VITE_API_URL`
-   - **Value**: `https://your-project-name.vercel.app/api/chat`
+   - **Name**: `VITE_API_BASE_URL`
+   - **Value**: `https://your-project-name.vercel.app`
+   - **Note**: The `/api/chat` endpoint is automatically appended
 4. Click **Add secret**
 
 ### 2.4 Push Code and Deploy
