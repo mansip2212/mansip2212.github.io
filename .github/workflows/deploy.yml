@@ -33,6 +33,8 @@ jobs:
       
       - name: Build
         run: npm run build
+        env:
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || 'https://my-portfolio-seven-teal-92.vercel.app' }}
       
       - name: Create 404.html for GitHub Pages SPA routing
         run: |

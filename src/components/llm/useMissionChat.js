@@ -42,7 +42,12 @@ export function useMissionChat() {
     setLoading(true);
 
     try {
-      const apiUrl = "/api/chat";
+      // In development, use Vite proxy. In production, use Vercel API.
+      const apiBaseUrl = import.meta.env.PROD 
+        ? (import.meta.env.VITE_API_BASE_URL || "https://my-portfolio-seven-teal-92.vercel.app")
+        : "";
+      const normalizedBase = (apiBaseUrl || "").replace(/\/+$/, "");
+      const apiUrl = normalizedBase ? `${normalizedBase}/api/chat` : "/api/chat";
       const res = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
