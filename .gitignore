@@ -25,10 +25,9 @@ dist-ssr
 
 .vercel
 .env*.local
+.env
 .env.local
 .env.development
-# .env.production should be committed (used for build)
 server/.env
 server/.env.local
 *.env.local
-# Note: .env.production should be committed (used for build)
