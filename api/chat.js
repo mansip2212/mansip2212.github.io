@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   // Enable CORS for all origins
   const allowedOrigins = [
     'https://mansip2212.github.io',
-    'https://mansip2212.github.io/portfolio-v2',
     'http://localhost:5173',
     'http://localhost:3000'
   ];
