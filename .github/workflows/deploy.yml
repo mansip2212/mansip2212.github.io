@@ -34,11 +34,18 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || 'https://your-api-url.vercel.app' }}
+          VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL || '' }}
+      
+      - name: Verify build output
+        run: |
+          ls -la dist/
+          echo "Build files:"
+          find dist -type f | head -10
       
       - name: Create 404.html for GitHub Pages SPA routing
         run: |
           cp dist/index.html dist/404.html
+          echo "Created 404.html for SPA routing"
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
