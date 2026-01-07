@@ -42,13 +42,7 @@ export function useMissionChat() {
     setLoading(true);
 
     try {
-      // In development, always use the Vite proxy (relative path) to avoid CORS.
-      // In production builds, use the configured base URL.
-      const apiBaseUrl = import.meta.env.PROD
-        ? (import.meta.env.VITE_API_BASE_URL || "")
-        : "";
-      const normalizedBase = (apiBaseUrl || "").replace(/\/+$/, "");
-      const apiUrl = `${normalizedBase}/api/chat`;
+      const apiUrl = "/api/chat";
       const res = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
