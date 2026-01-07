@@ -1,6 +1,28 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default async function handler(req, res) {
+  // Enable CORS for all origins
+  const allowedOrigins = [
+    'https://mansip2212.github.io',
+    'https://mansip2212.github.io/portfolio-v2',
+    'http://localhost:5173',
+    'http://localhost:3000'
+  ];
+  
+  const origin = req.headers.origin || req.headers.referer;
+  if (origin && allowedOrigins.some(allowed => origin.startsWith(allowed))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Max-Age', '86400');
+  
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
