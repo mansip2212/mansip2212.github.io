@@ -12,7 +12,7 @@ export default function AppLayout() {
         playsInline
         className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover"
       >
-        <source src="/videos/space.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}videos/space.mp4`} type="video/mp4" />
       </video>
 
       {/* 🌑 Dark overlay (your choice) */}

@@ -180,7 +180,7 @@ export default function Projects() {
         title: "SmartStock - LLM Based Inventory Management System",
         subtitle: "React.js, Next.js, Chart.js, Firebase, Stripe API, MCP",
         category: "Full Stack",
-        image: "/projects/smartstock.png",
+        image: `${import.meta.env.BASE_URL}projects/smartstock.png`,
         impact:
           "Enabled token-efficient LLM queries with ~97% semantic retrieval precision and a 30% boost in operational efficiency; maintained <300ms inference latency in production.",
         bullets: [
@@ -208,7 +208,7 @@ export default function Projects() {
         title: "Autonomous Vehicle Semantic Segmentation",
         subtitle: "TensorFlow, CNN, Scikit-learn, HuggingFace, NumPy",
         category: "AI/ML",
-        image: "/projects/segmentation.png",
+        image: `${import.meta.env.BASE_URL}projects/segmentation.png`,
         impact:
           "Achieved >98% precision for object boundary detection critical for vehicle navigation.",
         bullets: [
@@ -232,7 +232,7 @@ export default function Projects() {
         title: "Slot Payout Management System",
         subtitle: "React, Laravel, Chart.js, MongoDB, C#, MySQL, MQTT, HangFire",
         category: "Full Stack",
-        image: "/projects/slot-payout.png",
+        image: `${import.meta.env.BASE_URL}projects/slot-payout.png`,
         impact:
           "Improved admin operational efficiency by 30% and contributed to a 25% surge in site-wide revenue via secure real-time reporting workflows.",
         bullets: [
@@ -258,7 +258,7 @@ export default function Projects() {
         title: "Predicting Vaccine Recommendation with Geospatial Visualization",
         subtitle: "LSTM, ElasticNet, PySpark, Real-time APIs, Geospatial Analytics",
         category: "AI/ML",
-        image: "/projects/vaccine-reco.png",
+        image: `${import.meta.env.BASE_URL}projects/vaccine-reco.png`,
         impact:
           "Processed 1M+ records with ~96% predictive accuracy and enabled ~30% more efficient vaccine deployment in high-risk regions.",
         bullets: [

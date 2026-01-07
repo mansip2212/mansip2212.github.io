@@ -209,7 +209,7 @@ export default function Contact() {
       {/* Background: video optional. Keep your space.mp4 if you want. */}
       <video
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"
-        src="/videos/space.mp4"
+        src={`${import.meta.env.BASE_URL}videos/space.mp4`}
         autoPlay
         muted
         loop
