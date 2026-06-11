@@ -457,7 +457,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--emerald);outline-offs
     <a class="mail" href="mailto:mansijpatels@gmail.com">mansijpatels@gmail.com</a>
     <div class="socials">
       <a class="btn ghost magnetic" href="https://www.linkedin.com/in/mansipatel1222" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
-      <a class="btn ghost magnetic" href="tel:+14809423341">+1 (480) 942-3341</a>
+      <a class="btn ghost magnetic" href="https://github.com/mansip2212" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
     </div>
   </div>
 </section>
@@ -508,6 +508,24 @@ if(!reduced && !coarse){
     heroInner.style.filter = 'blur(' + (p*6) + 'px)';
     requestAnimationFrame(smooth);
   })();
+
+  /* in-page links: #smoothContent is fixed, so native anchor jumps don't
+     move it visually. Compute the real target offset and drive the scroll. */
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener('click', e=>{
+      const sel = link.getAttribute('href');
+      const dest = document.querySelector(sel);
+      if(!dest) return;
+      e.preventDefault();
+      const destPos = Math.max(0, dest.getBoundingClientRect().top + scrollY);
+      history.pushState(null,'',sel);
+      const prevBehavior = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, destPos);
+      document.documentElement.style.scrollBehavior = prevBehavior;
+      target = destPos;
+    });
+  });
 }
 
 if(!reduced && !coarse){
