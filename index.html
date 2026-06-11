@@ -502,7 +502,7 @@ if(!reduced && !coarse){
     if(Math.abs(target - current) < .05) current = target;
     content.style.transform = 'translate3d(0,' + (-current) + 'px,0)';
     /* hero melts away instead of cutting */
-    const p = Math.min(current / innerHeight, 1);
+    const p = Math.min(current / (innerHeight * 1.6), 1);
     heroInner.style.transform = 'translateY(' + (p*110) + 'px) scale(' + (1 - p*0.07) + ')';
     heroInner.style.opacity = Math.max(1 - p*1.15, 0);
     heroInner.style.filter = 'blur(' + (p*6) + 'px)';
